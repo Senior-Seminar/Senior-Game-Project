@@ -4580,17 +4580,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1248325941390171605, guid: 01ddf457655d0db46a9df397fefb8bbd, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1248325941390171605, guid: 01ddf457655d0db46a9df397fefb8bbd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1248325941390171605, guid: 01ddf457655d0db46a9df397fefb8bbd, type: 3}
+      propertyPath: m_DrawMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1248325941390171605, guid: 01ddf457655d0db46a9df397fefb8bbd, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1466247572700158112, guid: 01ddf457655d0db46a9df397fefb8bbd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.68
+      value: -0.96
       objectReference: {fileID: 0}
     - target: {fileID: 1466247572700158112, guid: 01ddf457655d0db46a9df397fefb8bbd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.83
+      value: -0.22
       objectReference: {fileID: 0}
     - target: {fileID: 1466247572700158112, guid: 01ddf457655d0db46a9df397fefb8bbd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.000602
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1466247572700158112, guid: 01ddf457655d0db46a9df397fefb8bbd, type: 3}
       propertyPath: m_LocalRotation.w
