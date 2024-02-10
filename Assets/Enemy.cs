@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+
+    Animator animator;
+
+
+    //set health as property
     public float Health
     {
         set
@@ -21,6 +26,11 @@ public class Enemy : MonoBehaviour
     
     public float health = 1;
 
+    public void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     public void TakeDamage(float damage)
     {
         health -= damage;
@@ -28,6 +38,12 @@ public class Enemy : MonoBehaviour
 
     public void Defeated()
     {
+        animator.SetTrigger("Defeated");
+    }
+
+    public void RemoveEnemy()
+    {
         Destroy(gameObject);
     }
+
 }
