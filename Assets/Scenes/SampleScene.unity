@@ -4593,6 +4593,10 @@ PrefabInstance:
       value: Slime
       objectReference: {fileID: 0}
     - target: {fileID: 7868895809536590177, guid: bd27a4c78c2f3b94cb5f1e74a6be522d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7868895809536590177, guid: bd27a4c78c2f3b94cb5f1e74a6be522d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.542
       objectReference: {fileID: 0}
@@ -4602,7 +4606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7868895809536590177, guid: bd27a4c78c2f3b94cb5f1e74a6be522d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.995209
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7868895809536590177, guid: bd27a4c78c2f3b94cb5f1e74a6be522d, type: 3}
       propertyPath: m_LocalRotation.w
