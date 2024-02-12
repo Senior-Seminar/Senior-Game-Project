@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     private float minRange;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,13 +27,13 @@ public class EnemyController : MonoBehaviour
     void Update()
     {   
         //follow player if within min and max range
-        if(Vector3.Distance(target.position, transform.position) <= maxRange && Vector3.Distance(target.position, transform.position) >= minRange)
+        if(Vector3.Distance(target.position, transform.position) < maxRange && Vector3.Distance(target.position, transform.position) > minRange)
         {
             FollowPLayer();
         }
-        else //else transition back to idle animation
+        else
         {
-            myAnim.SetBool("isMoving", false);
+            UnfollowPlayer();
         }
     }
 
@@ -40,6 +41,12 @@ public class EnemyController : MonoBehaviour
     {
         myAnim.SetBool("isMoving", true);
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+        //yield return new WaitForSeconds(1f);
+    }
+
+    public void UnfollowPlayer()
+    {
+        myAnim.SetBool("isMoving", false);
     }
 
 }
