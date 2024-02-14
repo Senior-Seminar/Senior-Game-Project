@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5179727959440662816}
   - component: {fileID: 7873945012873926776}
   - component: {fileID: 5925135312997499064}
+  - component: {fileID: 6874669959358987698}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -272,6 +273,21 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   swordAttack: {fileID: 3845889062894147415}
+--- !u!114 &6874669959358987698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5649724075227834282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c02e431d658ce8847a85ae8974b0dc9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 73.5
+  maxHealth: 100
+  healthBar: {fileID: 0}
 --- !u!1 &6869965042857435403
 GameObject:
   m_ObjectHideFlags: 0
