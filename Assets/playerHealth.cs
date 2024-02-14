@@ -17,7 +17,7 @@ public class playerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1); // this is the fill amount will never go out of bounds//
+        healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 100); // this is the fill amount will never go out of bounds//
         print("hello");
         print(health);
         
