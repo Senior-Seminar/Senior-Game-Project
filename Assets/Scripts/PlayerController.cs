@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 // Takes and handles input and movement for a player character
 public class PlayerController : MonoBehaviour
 {
+    public GameObject inventoryUI;
+
     public float moveSpeed = 1f;
     public float collisionOffset = 0.05f;
     public ContactFilter2D movementFilter;
@@ -63,6 +65,30 @@ public class PlayerController : MonoBehaviour
             {
                 spriteRenderer.flipX = false;
             }
+        }
+    }
+
+    void Update()
+    {
+        // Open/close inventory with Tab key
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            inventoryUI.SetActive(!inventoryUI.activeSelf);
+        }
+
+        // Navigate between inventory slots with arrow keys
+        // Implement your navigation logic here
+
+        // Use item with Enter key
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            // Implement your use item logic here
+        }
+
+        // Drop item with Backspace key
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            // Implement your drop item logic here
         }
     }
 

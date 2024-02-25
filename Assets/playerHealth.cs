@@ -7,19 +7,36 @@ public class playerHealth : MonoBehaviour
 {
     public float health;
     public float maxHealth;
-    public Image healthBar; //variable for image// 
-    // Start is called before the first frame update
+    public Image healthBar;
     void Start()
     {
-        maxHealth = health;
+        health = maxHealth;
+        UpdateHealthUI();
+    }
+    public void TakeDamage(int damageAmount)
+    {
+        health -= damageAmount;
+        health = Mathf.Clamp(health, 0, maxHealth);
+        UpdateHealthUI();
+
+        if (health <= 0)
+        {
+            Death();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void Death()
     {
-        healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 100); // this is the fill amount will never go out of bounds//
-        print("hello");
-        print(health);
-        
+        Debug.Log("Player died!");
+    }
+
+    void UpdateHealthUI()
+    {
+        if (healthBar != null)
+        {
+            float healthPercent = (float)health / maxHealth;
+            healthBar.transform.localScale = new Vector3(healthPercent, 1f, 1f);
+            //healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 100);
+        }
     }
 }
