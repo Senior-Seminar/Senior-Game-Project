@@ -11,6 +11,7 @@ public class Slime2 : MonoBehaviour, IDamageable
 
     bool isAlive = true;
 
+    private Transform playerTransform;
 
     //health property
     public float Health
@@ -64,6 +65,15 @@ public class Slime2 : MonoBehaviour, IDamageable
 
         rb = GetComponent<Rigidbody2D>();
         physicsCollider = GetComponent<Collider2D>();
+
+        //get player transform
+        playerTransform = GameObject.FindWithTag("Player").transform;
+    }
+
+    private void Update()
+    {
+        //check if player is attack from left or right and switch animation on x axis accordingly
+        CheckAttackDirection();
     }
 
 
@@ -88,5 +98,24 @@ public class Slime2 : MonoBehaviour, IDamageable
     public void OnObjectDestroyed()
     {
         Destroy(gameObject);
+    }
+
+
+
+    void CheckAttackDirection()
+    {
+        //determine if player direction is left or right
+        float direction = playerTransform.position.x < transform.position.x ? -1f : 1f;
+
+        //flip slime animation based on attack direction
+        if(direction < 0f)
+        {
+            //player on left
+            animator.transform.localScale = new Vector3(-1, 1, 1);
+        } else
+        {
+            //player on right
+            animator.transform.localScale = new Vector3(1, 1, 1);
+        }
     }
 }
