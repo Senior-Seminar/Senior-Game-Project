@@ -8,11 +8,11 @@ public class EnemyController : MonoBehaviour
     private Animator myAnim;
     private Transform target;
     [SerializeField]
-    private float speed;
+    private float speed = 0f;
     [SerializeField]
-    private float maxRange;
+    private float maxRange = 0f;
     [SerializeField]
-    private float minRange;
+    private float minRange = 0f;
 
 
     // Start is called before the first frame update
@@ -40,8 +40,10 @@ public class EnemyController : MonoBehaviour
     public void FollowPLayer()
     {
         myAnim.SetBool("isMoving", true);
+        myAnim.SetFloat("moveX", (target.position.x - transform.position.x));
+        myAnim.SetFloat("moveY", (target.position.y - transform.position.y));
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
-        //yield return new WaitForSeconds(1f);
+        
     }
 
     public void UnfollowPlayer()

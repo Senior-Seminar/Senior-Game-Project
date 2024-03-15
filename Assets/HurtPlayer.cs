@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HurtPlayer : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class HurtPlayer : MonoBehaviour
         {
             //Destroy(other.gameObject);
             other.gameObject.SetActive(false);
+            //reset scene
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
