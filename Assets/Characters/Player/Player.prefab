@@ -215,18 +215,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.004064083, y: -0.14809075}
+  m_Offset: {x: -0.004064083, y: -0.078187495}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 0.16, y: 0.19}
     newSize: {x: 0.48, y: 0.48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.071925044, y: 0.024822593}
+  m_Size: {x: 0.071925044, y: 0.040356666}
   m_EdgeRadius: 0
 --- !u!1 &6869965042857435403
 GameObject:
@@ -238,7 +238,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8314365541570347073}
   - component: {fileID: 6748905029791990212}
-  - component: {fileID: 3845889062894147415}
   - component: {fileID: 5359564883638327138}
   m_Layer: 0
   m_Name: SwordHitbox
@@ -294,7 +293,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.02313266, y: 0.029102385}
+  m_Offset: {x: -0.02313266, y: 0.071821034}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -305,22 +304,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1247801, y: 0.19179523}
+  m_Size: {x: 0.1247801, y: 0.16461062}
   m_EdgeRadius: 0
---- !u!114 &3845889062894147415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6869965042857435403}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48c0635774184d94f887cf12947ab81a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swordCollider: {fileID: 6748905029791990212}
-  damage: 3
 --- !u!114 &5359564883638327138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,4 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swordDamage: 1
+  knockbackForce: 500
   swordCollider: {fileID: 6748905029791990212}
+  faceRight: {x: 0.119, y: -0.09, z: 0}
+  faceLeft: {x: -0.119, y: -0.09, z: 0}

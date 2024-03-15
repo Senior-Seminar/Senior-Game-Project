@@ -33,7 +33,7 @@ public class SwordHitBox : MonoBehaviour
         if(damagableObject != null)
         {
             //calculate direction between character and slime
-            Vector3 parentPosition = gameObject.GetComponentInParent<Transform>().position;
+            Vector3 parentPosition = transform.parent.position;
 
             Vector2 direction = (Vector2)(collider.gameObject.transform.position - parentPosition).normalized;
             Vector2 knockback = direction * knockbackForce;
