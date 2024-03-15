@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6592646316858291223}
   - component: {fileID: 9168836575914102890}
   - component: {fileID: 3480863843108702234}
-  - component: {fileID: 6113832112668061796}
   - component: {fileID: 5179727959440662816}
   - component: {fileID: 7873945012873926776}
+  - component: {fileID: 6113832112668061796}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -140,22 +140,6 @@ MonoBehaviour:
   m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &6113832112668061796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5649724075227834282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1242dcd83da9a994297d6d4be579c2a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 1
-  maxSpeed: 2.2
-  idleFriction: 0.9
-  swordHitBox: {fileID: 6869965042857435403}
 --- !u!50 &5179727959440662816
 Rigidbody2D:
   serializedVersion: 4
@@ -228,6 +212,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.071925044, y: 0.03258963}
   m_EdgeRadius: 0
+--- !u!114 &6113832112668061796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5649724075227834282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1242dcd83da9a994297d6d4be579c2a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 1
+  maxSpeed: 2.2
+  idleFriction: 0.9
+  swordHitBox: {fileID: 6869965042857435403}
 --- !u!1 &6869965042857435403
 GameObject:
   m_ObjectHideFlags: 0

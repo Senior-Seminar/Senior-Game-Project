@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Slime2 : MonoBehaviour, IDamageable
 {
+    public float damage = 1;
+
     Animator animator;
     Rigidbody2D rb;
     Collider2D physicsCollider;
@@ -45,7 +47,7 @@ public class Slime2 : MonoBehaviour, IDamageable
         {
             _targetable = value;
 
-            rb.simulated = value;
+            //rb.simulated = value;
             physicsCollider.enabled = value;
         }
         get
@@ -85,7 +87,7 @@ public class Slime2 : MonoBehaviour, IDamageable
         rb.AddForce(knockback);
     }
 
-    public void Onhit(float damage)
+    public void OnHit(float damage)
     {
         Health -= damage;
     }
@@ -116,6 +118,17 @@ public class Slime2 : MonoBehaviour, IDamageable
         {
             //player on right
             animator.transform.localScale = new Vector3(1, 1, 1);
+        }
+    }
+
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        IDamageable damageable = col.collider.GetComponent<IDamageable>();
+
+        if(damageable != null)
+        {
+            damageable.OnHit(damage);
         }
     }
 }
