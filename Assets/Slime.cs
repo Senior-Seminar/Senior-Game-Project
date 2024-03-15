@@ -1,57 +1,92 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
-public class Slime : MonoBehaviour
+public class Slime2 : MonoBehaviour, IDamageable
 {
+    Animator animator;
+    Rigidbody2D rb;
+    Collider2D physicsCollider;
 
-    public float speed = 2f;
-    private Transform player;
-    private Rigidbody2D rb;
-    private bool playerInRange = false; // Track if the player is within detection radius
+    bool isAlive = true;
 
-    void Start()
+
+    //health property
+    public float Health
     {
+        set
+        {
+            if (value < _health)
+            {
+                animator.SetTrigger("hit");
+            }
+
+            _health = value;
+
+            //trigger death when health is equal or below 0
+            if (_health <= 0)
+            {
+                animator.SetBool("isAlive", false);
+                Targetable = false;
+            }
+
+        }
+        get
+        {
+            return _health;
+        }
+    }
+
+    public bool Targetable
+    {
+        set
+        {
+            _targetable = value;
+
+            rb.simulated = value;
+            physicsCollider.enabled = value;
+        }
+        get
+        {
+            return _targetable;
+        }
+    }
+
+    public float _health = 3;
+    public bool _targetable = true;
+
+    public void Start()
+    {
+        animator = GetComponent<Animator>();
+        //this is here to make sure isAlive boolean parameters is set to true when starting
+        animator.SetBool("isAlive", isAlive);
+
         rb = GetComponent<Rigidbody2D>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        physicsCollider = GetComponent<Collider2D>();
     }
 
-    void Update()
+
+    public void OnHit(float damage, Vector2 knockback)
     {
-        if (playerInRange)
-        {
-            MoveTowardsPlayer();
-        }
+        Health -= damage;
+
+        //Apply force to slime enemy
+        rb.AddForce(knockback);
     }
 
-    void MoveTowardsPlayer()
+    public void Onhit(float damage)
     {
-        Vector2 direction = (player.position - transform.position).normalized;
-        rb.MovePosition(rb.position + direction * speed * Time.deltaTime);
+        Health -= damage;
     }
 
-    // Triggered when something enters the trigger zone
-    void OnTriggerEnter2D(Collider2D other)
+    public void MakeUntargetable()
     {
-        Debug.Log("Something entered the trigger zone");
-        if (other.gameObject.CompareTag("Player"))
-        {
-            playerInRange = true;
-            Debug.Log("Player entered the detection zone");
-        }
+        rb.simulated = false;
     }
 
-
-    // Triggered when something exits the trigger zone
-    void OnTriggerExit2D(Collider2D other)
+    public void OnObjectDestroyed()
     {
-        Debug.Log("Something exited the trigger zone");
-        if (other.gameObject.CompareTag("Player"))
-        {
-            playerInRange = false;
-            Debug.Log("Player exited the detection zone");
-        }
+        Destroy(gameObject);
     }
-
 }
