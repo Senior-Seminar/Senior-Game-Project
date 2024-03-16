@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class Slime2 : MonoBehaviour, IDamageable
 {
-    public float damage = 1;
-
     Animator animator;
     Rigidbody2D rb;
     Collider2D physicsCollider;
+
+    public float damage = 1;
 
     bool isAlive = true;
 
@@ -125,8 +125,10 @@ public class Slime2 : MonoBehaviour, IDamageable
     void OnCollisionEnter2D(Collision2D col)
     {
         IDamageable damageable = col.collider.GetComponent<IDamageable>();
+        //also check if collision is with player tag so slime doesn't damage each other
+        bool isPlayer = col.gameObject.CompareTag("Player");
 
-        if(damageable != null)
+        if (damageable != null && isPlayer)
         {
             damageable.OnHit(damage);
         }
