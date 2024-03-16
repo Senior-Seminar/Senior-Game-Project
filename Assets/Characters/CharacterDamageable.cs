@@ -110,6 +110,7 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
         float direction = playerTransform.position.x < transform.position.x ? -1f : 1f;
 
         //flip slime animation based on attack direction
+        //using eular angle because for some reason player is twice the size of enemy slime
         if (direction < 0f)
         {
             //player on left

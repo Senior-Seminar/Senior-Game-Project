@@ -9,9 +9,6 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 150f;
     public float maxSpeed = 8f;
     public float idleFriction = 0.9f;
-    //public SwordAttack swordAttack;
-
-
 
     Vector2 movementInput;
     SpriteRenderer spriteRenderer;
