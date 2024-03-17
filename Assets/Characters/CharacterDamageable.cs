@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class CharacterDamageable : MonoBehaviour, IDamageable
 {
+    public bool disableSimulation = false;
+
     Animator animator;
     Rigidbody2D rb;
     Collider2D physicsCollider;
-
-    public float damage = 1;
+    SpriteRenderer spriteRenderer;
 
     bool isAlive = true;
 
@@ -43,16 +44,20 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
 
     public bool Targetable
     {
-        set
-        {
-            _targetable = value;
-
-            //rb.simulated = value;
-            physicsCollider.enabled = value;
-        }
         get
         {
             return _targetable;
+        }
+        set
+        {
+            _targetable = value;
+            //disable movement when character 
+            if (disableSimulation)
+            {
+                rb.simulated = false;
+
+            }
+            physicsCollider.enabled = value;
         }
     }
 
@@ -70,6 +75,8 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
 
         //get player transform
         playerTransform = GameObject.FindWithTag("Player").transform;
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -83,7 +90,7 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
     {
         Health -= damage;
 
-        //Apply force to slime enemy
+        //Apply force 
         rb.AddForce(knockback);
     }
 
@@ -109,17 +116,17 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
         //determine if player direction is left or right
         float direction = playerTransform.position.x < transform.position.x ? -1f : 1f;
 
-        //flip slime animation based on attack direction
-        //using eular angle because for some reason player is twice the size of enemy slime
+        // Flip animation based on attack direction using rotation
+        //using eular angle because for some reason player is twice the size of enemy slime and don't want to change scale
         if (direction < 0f)
         {
-            //player on left
+            // Player is on the left, rotate 180 degrees to face left
             animator.transform.localEulerAngles = new Vector3(0, 180, 1);
 
         }
         else
         {
-            //player on right
+            // Player is on the right, reset rotation to face right
             animator.transform.localEulerAngles = new Vector3(0, 0, 1);
         }
     }

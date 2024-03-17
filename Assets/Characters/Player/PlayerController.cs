@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour
 
 
     public GameObject swordHitBox;
-
     Collider2D swordCollider;
 
 
