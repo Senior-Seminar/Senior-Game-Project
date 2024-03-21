@@ -1,10 +1,25 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OptionsMenuController : MonoBehaviour
 {
     public GameObject optionsMenuPrefab;
     private GameObject optionsMenuInstance;
     private bool isPaused = false;
+
+    void Start()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if(isPaused)
+        {
+            Time.timeScale = 1;
+            isPaused = false;
+        }
+    }
 
     void Update()
     {
@@ -38,7 +53,8 @@ public class OptionsMenuController : MonoBehaviour
     void OpenOptionsMenu()
      {
         optionsMenuInstance = Instantiate(optionsMenuPrefab, Vector3.zero, Quaternion.identity);
-
+        Debug.Log("Opening options menu...");
+        optionsMenuInstance.SetActive(true);
     }
 
     void CloseOptionsMenu()
@@ -47,5 +63,10 @@ public class OptionsMenuController : MonoBehaviour
         {
             Destroy(optionsMenuInstance);
         }
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
