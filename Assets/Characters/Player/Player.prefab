@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 6592646316858291223}
   - component: {fileID: 9168836575914102890}
   - component: {fileID: 3480863843108702234}
-  - component: {fileID: 6113832112668061796}
   - component: {fileID: 5179727959440662816}
   - component: {fileID: 7873945012873926776}
-  - component: {fileID: 5925135312997499064}
+  - component: {fileID: 6113832112668061796}
+  - component: {fileID: 2611950026783145049}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -1795599013, guid: 222e175f18b99384a80ad3d4bc391dd0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.48, y: 0.48}
@@ -142,7 +142,6 @@ MonoBehaviour:
   m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &6113832112668061796
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,7 +170,7 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   swordAttack: {fileID: 0}
---- !u!50 &5179727959440662816
+
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -179,14 +178,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5649724075227834282}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -230,49 +229,46 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0050756186, y: -0.15120651}
+  m_Offset: {x: -0.004064083, y: -0.074303985}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 0.16, y: 0.19}
     newSize: {x: 0.48, y: 0.48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.070309624, y: 0.018912464}
+  m_Size: {x: 0.071925044, y: 0.03258963}
   m_EdgeRadius: 0
---- !u!114 &5925135312997499064
+--- !u!114 &6113832112668061796
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5649724075227834282}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1242dcd83da9a994297d6d4be579c2a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  collisionOffset: 0.01
-  movementFilter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  swordAttack: {fileID: 3845889062894147415}
---- !u!1 &6869965042857435403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5649724075227834282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7cf2b505d5a6eb44ab59f69543d3210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableSimulation: 1
+  _health: 3
+  _targetable: 1
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -282,7 +278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8314365541570347073}
   - component: {fileID: 6748905029791990212}
-  - component: {fileID: 3845889062894147415}
+  - component: {fileID: 5359564883638327138}
   m_Layer: 0
   m_Name: SwordHitbox
   m_TagString: Untagged
@@ -337,7 +333,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.02313266, y: 0.071821034}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -348,9 +344,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.18, y: 0.25}
+  m_Size: {x: 0.1247801, y: 0.16461062}
   m_EdgeRadius: 0
---- !u!114 &3845889062894147415
+--- !u!114 &5359564883638327138
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -359,8 +355,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6869965042857435403}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48c0635774184d94f887cf12947ab81a, type: 3}
+  m_Script: {fileID: 11500000, guid: a201cd594f2a32c469cd0a5b25e4aa53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swordDamage: 1
+  knockbackForce: 500
   swordCollider: {fileID: 6748905029791990212}
-  damage: 3
+  faceRight: {x: 0.119, y: -0.09, z: 0}
+  faceLeft: {x: -0.119, y: -0.09, z: 0}
