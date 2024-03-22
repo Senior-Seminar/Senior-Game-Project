@@ -4994,6 +4994,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue_Slime
       objectReference: {fileID: 0}
+    - target: {fileID: 3397873316716279453, guid: 02ec7bd6360657a46b8f60d607e0a927, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 3422346844950325129, guid: 02ec7bd6360657a46b8f60d607e0a927, type: 3}
       propertyPath: m_LinearDrag
       value: 5
