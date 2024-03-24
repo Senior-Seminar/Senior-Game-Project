@@ -543,9 +543,10 @@ GameObject:
   m_Component:
   - component: {fileID: 572831070}
   - component: {fileID: 572831071}
+  - component: {fileID: 572831072}
   m_Layer: 0
   m_Name: Torch_7
-  m_TagString: Untagged
+  m_TagString: Spotlight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -615,6 +616,18 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &572831072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572831069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8447aecf0b87fe48befd16f9616f435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &588386846
 GameObject:
   m_ObjectHideFlags: 0
@@ -53921,7 +53934,7 @@ GameObject:
   - component: {fileID: 1239449702}
   m_Layer: 0
   m_Name: Puzzle Tiles
-  m_TagString: Untagged
+  m_TagString: CavernPuzzleTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55826,6 +55839,7 @@ GameObject:
   - component: {fileID: 1568030378}
   - component: {fileID: 1568030377}
   - component: {fileID: 1568030376}
+  - component: {fileID: 1568030379}
   m_Layer: 0
   m_Name: Torches
   m_TagString: Untagged
@@ -56398,6 +56412,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1568030379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568030374}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8447aecf0b87fe48befd16f9616f435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1573004564
 GameObject:
   m_ObjectHideFlags: 0
@@ -56691,6 +56717,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5649724075227834282, guid: cbaabe91c5e66dc4c973ffaf4920282f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1672313641}
+    - targetCorrespondingSourceObject: {fileID: 5649724075227834282, guid: cbaabe91c5e66dc4c973ffaf4920282f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1672313650}
     - targetCorrespondingSourceObject: {fileID: 6869965042857435403, guid: cbaabe91c5e66dc4c973ffaf4920282f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1991143175}
@@ -56881,6 +56910,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7474235761491591332, guid: cbaabe91c5e66dc4c973ffaf4920282f, type: 3}
   m_PrefabInstance: {fileID: 1578646055}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1672313650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672313640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8447aecf0b87fe48befd16f9616f435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1917770094
 GameObject:
   m_ObjectHideFlags: 0
