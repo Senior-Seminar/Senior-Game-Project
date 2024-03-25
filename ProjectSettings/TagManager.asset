@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
-  - Item
+  - CavernPuzzleTile
+  - Spotlight
   layers:
   - Default
   - TransparentFX
