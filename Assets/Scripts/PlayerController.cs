@@ -152,20 +152,4 @@ public class PlayerController : MonoBehaviour
     {
         canMove = true;
     }
-
-    public void ApplySpeedBoost(float speedMultiplier, float duration)
-    {
-        float boostedSpeed = moveSpeed * speedMultiplier;
-        StartCoroutine(TemporarySpeedBoost(boostedSpeed, duration));
-    }
-
-    private IEnumerator TemporarySpeedBoost(float boostedSpeed, float duration)
-    {
-        float originalSpeed = moveSpeed;
-        moveSpeed = boostedSpeed;
-
-        yield return new WaitForSeconds(duration);
-
-        moveSpeed = originalSpeed;
-    }
 }
