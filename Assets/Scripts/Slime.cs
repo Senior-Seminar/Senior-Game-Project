@@ -1,57 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
-public class Slime : MonoBehaviour
+public class Slime2 : MonoBehaviour
 {
 
-    public float speed = 2f;
-    private Transform player;
-    private Rigidbody2D rb;
-    private bool playerInRange = false; // Track if the player is within detection radius
-
-    void Start()
+    public float damage = 1;
+    void OnCollisionEnter2D(Collision2D col)
     {
-        rb = GetComponent<Rigidbody2D>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-    }
+        IDamageable damageable = col.collider.GetComponent<IDamageable>();
+        //also check if collision is with player tag so slime doesn't damage each other
+        bool isPlayer = col.gameObject.CompareTag("Player");
 
-    void Update()
-    {
-        if (playerInRange)
+        if (damageable != null && isPlayer)
         {
-            MoveTowardsPlayer();
+            damageable.OnHit(damage);
         }
     }
-
-    void MoveTowardsPlayer()
-    {
-        Vector2 direction = (player.position - transform.position).normalized;
-        rb.MovePosition(rb.position + direction * speed * Time.deltaTime);
-    }
-
-    // Triggered when something enters the trigger zone
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("Something entered the trigger zone");
-        if (other.gameObject.CompareTag("Player"))
-        {
-            playerInRange = true;
-            Debug.Log("Player entered the detection zone");
-        }
-    }
-
-
-    // Triggered when something exits the trigger zone
-    void OnTriggerExit2D(Collider2D other)
-    {
-        Debug.Log("Something exited the trigger zone");
-        if (other.gameObject.CompareTag("Player"))
-        {
-            playerInRange = false;
-            Debug.Log("Player exited the detection zone");
-        }
-    }
-
 }
