@@ -6,8 +6,6 @@ using UnityEngine.InputSystem;
 // Takes and handles input and movement for a player character
 public class PlayerController : MonoBehaviour
 {
-    public GameObject inventoryUI;
-
     public float moveSpeed = 1f;
     public float collisionOffset = 0.05f;
     public ContactFilter2D movementFilter;
@@ -70,12 +68,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // Open/close inventory with Tab key
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            inventoryUI.SetActive(!inventoryUI.activeSelf);
-        }
-
         // Navigate between inventory slots with arrow keys
         // Implement your navigation logic here
 
@@ -159,5 +151,21 @@ public class PlayerController : MonoBehaviour
     public void UnlockMovement()
     {
         canMove = true;
+    }
+
+    public void ApplySpeedBoost(float speedMultiplier, float duration)
+    {
+        float boostedSpeed = moveSpeed * speedMultiplier;
+        StartCoroutine(TemporarySpeedBoost(boostedSpeed, duration));
+    }
+
+    private IEnumerator TemporarySpeedBoost(float boostedSpeed, float duration)
+    {
+        float originalSpeed = moveSpeed;
+        moveSpeed = boostedSpeed;
+
+        yield return new WaitForSeconds(duration);
+
+        moveSpeed = originalSpeed;
     }
 }
