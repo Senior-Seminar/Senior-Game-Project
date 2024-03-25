@@ -6,6 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/MainMenu.unity
+    guid: 8e1afa5995d026e48adc652b14ef8407
+  - enabled: 1
+    path: Assets/Scenes/KhalidScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/AreaOne.unity
+    guid: d806970f4b2f020409eb96ca59550cbf
+  - enabled: 1
+    path: Assets/Scenes/HouseScenes/House1.unity
+    guid: 906d5b7a51f93294d8e3630114e1ae10
+  - enabled: 1
+    path: Assets/Scenes/HouseScenes/House2.unity
+    guid: ea199b188290fe347a0a0db5bba91d86
+  - enabled: 1
+    path: Assets/Scenes/HouseScenes/House3.unity
+    guid: 5a9b006ff51120c4688d70cd488fe370
+  - enabled: 1
+    path: Assets/Scenes/RuinScenes/RuinsRoom1.unity
+    guid: 3e4128141fdb5d14f8a4ffac345fbb34
+  - enabled: 1
+    path: Assets/Scenes/Cavern.unity
+    guid: 6ca69e721c8f8f848acd5d5235a581c4
   m_configObjects: {}
