@@ -14,7 +14,7 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
     Collider2D physicsCollider;
     SpriteRenderer spriteRenderer;
 
-    bool isAlive = true;
+    public bool isAlive = true;
     private Transform playerTransform;
     
 
