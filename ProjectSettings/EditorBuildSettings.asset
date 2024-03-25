@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Peyton's Scene.unity
-    guid: c7a8ad987331ac043bc78a8c69aedad6
+    path: Assets/Scenes/AreaOne.unity
+    guid: d806970f4b2f020409eb96ca59550cbf
   - enabled: 1
     path: Assets/Scenes/HouseScenes/House1.unity
     guid: 906d5b7a51f93294d8e3630114e1ae10
