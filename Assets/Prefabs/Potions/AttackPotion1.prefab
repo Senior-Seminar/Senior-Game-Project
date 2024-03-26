@@ -175,7 +175,7 @@ MonoBehaviour:
   pickupKey: 101
   player: {fileID: 0}
   itemName: Basic Attack Potion
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 1929542061, guid: 985d42a2b6a3bf14f9c443829443c88a, type: 3}
   itemID: 13
   damageIncrease: 1
   duration: 5
