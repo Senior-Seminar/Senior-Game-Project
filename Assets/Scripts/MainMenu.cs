@@ -18,12 +18,12 @@ public class MainMenu : MonoBehaviour {
 
    public void NewGame ()
    {
-	   SceneManager.LoadScene("SampleScene");
+	   SceneManager.LoadScene("AreaOne(2)");
    }
 
    public void LoadGame ()
    {
-	   SceneManager.LoadScene("Peyton's Scene");
+	   SceneManager.LoadScene("Cavern");
    }
 
    public void Quit ()

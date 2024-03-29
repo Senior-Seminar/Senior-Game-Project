@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/AreaOne.unity
     guid: d806970f4b2f020409eb96ca59550cbf
   - enabled: 1
+    path: Assets/Scenes/AreaOne(2).unity
+    guid: c086402c5515bf6489311b2cbf01dd10
+  - enabled: 1
     path: Assets/Scenes/HouseScenes/House1.unity
     guid: 906d5b7a51f93294d8e3630114e1ae10
   - enabled: 1
