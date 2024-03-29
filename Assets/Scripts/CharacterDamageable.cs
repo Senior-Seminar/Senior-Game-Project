@@ -14,10 +14,10 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
     Collider2D physicsCollider;
     SpriteRenderer spriteRenderer;
 
-    bool isAlive = true;
+    public bool isAlive = true;
     private Transform playerTransform;
     
-
+    
     // Health property
     public float Health
     {
@@ -66,6 +66,7 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
 
     public void Start()
     {
+
         animator = GetComponent<Animator>();
         animator.SetBool("isAlive", isAlive);
 
@@ -76,9 +77,7 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
         playerTransform = GameObject.FindWithTag("Player").transform;
 
         spriteRenderer = GetComponent<SpriteRenderer>();
-        // Find and assign the health bar image
-        healthBar  = GetComponent<Image>();
-        
+        healthBar = GetComponent<Image>();
     }
 
     private void Update()
