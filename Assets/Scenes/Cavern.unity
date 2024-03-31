@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 110069312}
   m_Layer: 0
   m_Name: Torch_9
-  m_TagString: Untagged
+  m_TagString: Spotlight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1113,7 +1113,7 @@ GameObject:
   - component: {fileID: 588386848}
   m_Layer: 0
   m_Name: Torch_8
-  m_TagString: Untagged
+  m_TagString: Spotlight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42040,7 +42040,7 @@ GameObject:
   - component: {fileID: 963782065}
   m_Layer: 0
   m_Name: Torch_18
-  m_TagString: Untagged
+  m_TagString: Spotlight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42164,7 +42164,7 @@ GameObject:
   - component: {fileID: 976653133}
   m_Layer: 0
   m_Name: Torch_17
-  m_TagString: Untagged
+  m_TagString: Spotlight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42541,7 +42541,7 @@ GameObject:
   - component: {fileID: 1090818460}
   m_Layer: 0
   m_Name: Torch_4
-  m_TagString: Untagged
+  m_TagString: Spotlight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54977,7 +54977,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 0
-  - first: {x: 27, y: -29, z: 0}
+  - first: {x: 25, y: -27, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 2
@@ -55126,7 +55126,7 @@ Tilemap:
       m_AnimationSpeed: 4
       m_AnimationTimeOffset: 0
       m_Flags: 0
-  - first: {x: 27, y: -29, z: 0}
+  - first: {x: 25, y: -27, z: 0}
     second:
       serializedVersion: 2
       m_AnimatedSprites:
@@ -56448,7 +56448,7 @@ GameObject:
   - component: {fileID: 1358905353}
   m_Layer: 0
   m_Name: Torch_10
-  m_TagString: Untagged
+  m_TagString: Spotlight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56530,7 +56530,7 @@ GameObject:
   - component: {fileID: 1365393884}
   m_Layer: 0
   m_Name: Torch_16
-  m_TagString: Untagged
+  m_TagString: Spotlight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56715,7 +56715,7 @@ GameObject:
   - component: {fileID: 1423667484}
   m_Layer: 0
   m_Name: Torch_15
-  m_TagString: Untagged
+  m_TagString: Spotlight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58168,7 +58168,7 @@ GameObject:
   - component: {fileID: 1917770096}
   m_Layer: 0
   m_Name: Torch_13
-  m_TagString: Untagged
+  m_TagString: Spotlight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58354,7 +58354,7 @@ GameObject:
   - component: {fileID: 2083289461}
   m_Layer: 0
   m_Name: Torch_14
-  m_TagString: Untagged
+  m_TagString: Spotlight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
