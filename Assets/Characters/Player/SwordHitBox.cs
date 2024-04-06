@@ -5,7 +5,7 @@ using UnityEngine;
 public class SwordHitBox : MonoBehaviour
 {
     public float swordDamage = 1f;
-    public float knockbackForce = 500f;
+    public float knockbackForce = 100f;
     
     
     public Collider2D swordCollider;

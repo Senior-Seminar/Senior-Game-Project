@@ -92,6 +92,8 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
 
         //Apply force 
         rb.AddForce(knockback);
+        //rb.AddForce(knockback, ForceMode2D.Impulse);
+        //Debug.Log("Force: " + knockback);
     }
 
     public void OnHit(float damage)

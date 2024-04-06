@@ -42,7 +42,12 @@ public class PlayerController : MonoBehaviour
 
             //Accelerate the player while run direction is pressed
             //But don't  allow player to run faster than the max speed in any direction
+
+            //player movement by setting velocity
             rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movementInput * moveSpeed * Time.deltaTime), maxSpeed);
+
+            //player movement with force
+            //rb.AddForce(movementInput * moveSpeed * Time.deltaTime);
 
             //Control whether looking left or right
             if(movementInput.x > 0)
