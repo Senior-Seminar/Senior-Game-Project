@@ -44,10 +44,16 @@ public class PlayerController : MonoBehaviour
             //But don't  allow player to run faster than the max speed in any direction
 
             //player movement by setting velocity
-            rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movementInput * moveSpeed * Time.deltaTime), maxSpeed);
+            //rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movementInput * moveSpeed * Time.deltaTime), maxSpeed);
 
             //player movement with force
-            //rb.AddForce(movementInput * moveSpeed * Time.deltaTime);
+            rb.AddForce(movementInput * moveSpeed * Time.deltaTime);
+
+            if(rb.velocity.magnitude > maxSpeed)
+            {
+                float limitedSpeed = Mathf.Lerp(rb.velocity.magnitude, maxSpeed, idleFriction);
+                rb.velocity = rb.velocity.normalized * limitedSpeed;
+            }
 
             //Control whether looking left or right
             if(movementInput.x > 0)
@@ -64,7 +70,6 @@ public class PlayerController : MonoBehaviour
         } else {
             //No movement so interpolate velocity towards 0
             rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, idleFriction);
-
             IsMoving = false;
         }
     }

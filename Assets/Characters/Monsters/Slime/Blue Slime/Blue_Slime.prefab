@@ -164,6 +164,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  knockbackForce: 200
+  moveSpeed: 100
+  detectionZone: {fileID: 0}
+  rb: {fileID: 0}
 --- !u!114 &2387225134952322507
 MonoBehaviour:
   m_ObjectHideFlags: 0

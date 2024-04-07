@@ -52,11 +52,11 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
         {
             _targetable = value;
             //disable movement when character 
-            if (disableSimulation)
-            {
-                rb.simulated = false;
-
-            }
+            //if (disableSimulation)
+            //{
+            //    rb.simulated = false;
+            //}
+            rb.simulated = false;
             physicsCollider.enabled = value;
         }
     }
@@ -91,9 +91,7 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
         Health -= damage;
 
         //Apply force 
-        rb.AddForce(knockback);
-        //rb.AddForce(knockback, ForceMode2D.Impulse);
-        //Debug.Log("Force: " + knockback);
+        rb.AddForce(knockback, ForceMode2D.Impulse);
     }
 
     public void OnHit(float damage)

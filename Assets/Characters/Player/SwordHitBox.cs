@@ -5,7 +5,7 @@ using UnityEngine;
 public class SwordHitBox : MonoBehaviour
 {
     public float swordDamage = 1f;
-    public float knockbackForce = 100f;
+    public float knockbackForce = 15f;
     
     
     public Collider2D swordCollider;
@@ -40,10 +40,11 @@ public class SwordHitBox : MonoBehaviour
 
             //collider.SendMessage("OnHit", swordDamage, knockback);
             damagableObject.OnHit(swordDamage, knockback);
-        } else
-        {
-            Debug.LogWarning("Collider does not implement IDamageable interface");
         }
+        //else
+        //{
+        //    Debug.LogWarning("Collider does not implement IDamageable interface");
+        //}
     }
 
     void IsFacingRight(bool isFacingRight)
