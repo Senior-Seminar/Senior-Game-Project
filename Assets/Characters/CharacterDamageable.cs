@@ -16,6 +16,8 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
 
     private Transform playerTransform;
 
+
+
     //health property
     public float Health
     {
@@ -90,7 +92,7 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
     {
         Health -= damage;
 
-        //Apply force 
+        //Apply force
         rb.AddForce(knockback, ForceMode2D.Impulse);
     }
 

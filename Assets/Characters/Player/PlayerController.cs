@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
     Collider2D swordCollider;
 
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -43,17 +42,14 @@ public class PlayerController : MonoBehaviour
             //Accelerate the player while run direction is pressed
             //But don't  allow player to run faster than the max speed in any direction
 
-            //player movement by setting velocity
-            //rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movementInput * moveSpeed * Time.deltaTime), maxSpeed);
-
             //player movement with force
-            rb.AddForce(movementInput * moveSpeed * Time.deltaTime);
+            rb.AddForce(movementInput * moveSpeed * Time.deltaTime, ForceMode2D.Force);
 
-            if(rb.velocity.magnitude > maxSpeed)
-            {
-                float limitedSpeed = Mathf.Lerp(rb.velocity.magnitude, maxSpeed, idleFriction);
-                rb.velocity = rb.velocity.normalized * limitedSpeed;
-            }
+            //if(rb.velocity.magnitude > maxSpeed)
+            //{
+            //    float limitedSpeed = Mathf.Lerp(rb.velocity.magnitude, maxSpeed, idleFriction);
+            //    rb.velocity = rb.velocity.normalized * limitedSpeed;
+            //}
 
             //Control whether looking left or right
             if(movementInput.x > 0)
@@ -69,10 +65,13 @@ public class PlayerController : MonoBehaviour
             IsMoving = true;
         } else {
             //No movement so interpolate velocity towards 0
-            rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, idleFriction);
+            //rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, idleFriction);
             IsMoving = false;
         }
     }
+
+   
+
 
     public bool IsMoving
     {
