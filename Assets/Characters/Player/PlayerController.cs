@@ -37,19 +37,9 @@ public class PlayerController : MonoBehaviour
     {
         if (canMove == true && movementInput != Vector2.zero)
         {
-            //Move animation and add velocity
-
-            //Accelerate the player while run direction is pressed
-            //But don't  allow player to run faster than the max speed in any direction
-
             //player movement with force
             rb.AddForce(movementInput * moveSpeed * Time.deltaTime, ForceMode2D.Force);
 
-            //if(rb.velocity.magnitude > maxSpeed)
-            //{
-            //    float limitedSpeed = Mathf.Lerp(rb.velocity.magnitude, maxSpeed, idleFriction);
-            //    rb.velocity = rb.velocity.normalized * limitedSpeed;
-            //}
 
             //Control whether looking left or right
             if(movementInput.x > 0)
