@@ -16,8 +16,7 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
 
     public bool isAlive = true;
     private Transform playerTransform;
-    
-    
+
     // Health property
     public float Health
     {
@@ -77,7 +76,6 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
         playerTransform = GameObject.FindWithTag("Player").transform;
 
         spriteRenderer = GetComponent<SpriteRenderer>();
-        healthBar = GetComponent<Image>();
     }
 
     private void Update()

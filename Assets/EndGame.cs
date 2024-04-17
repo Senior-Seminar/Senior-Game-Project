@@ -6,33 +6,25 @@ using UnityEngine.SceneManagement;
 
 public class EndGame : MonoBehaviour
 {
-    public GameObject endGameMenu;
-    public CharacterDamageable damageable;
-    // Start is called before the first frame update
+    public GameObject player;
+    private Animator playerAnimator;
+    public GameObject deathScreenPrefab;
+    private GameObject deathScreenInstance;
+    public MainMenu mainMenu;
+
     void Start()
     {
-        if (damageable == null)
-        {
-            Debug.LogError("CharacterDamageable is not assigned to EndGame script.");
-        }
-        else
-        {
-            endGameMenu.SetActive(false);
-        }
+        playerAnimator = player.GetComponent<Animator>();
     }
 
-    public void PlayerDeath()
+    void Update()
     {
-        if (damageable != null && damageable.Health <= 0)
+        if (!playerAnimator.GetBool("isAlive"))
         {
-            StartCoroutine(ShowEndGameMenuAfterDelay(3f));
+            Time.timeScale = 0;
+            Debug.Log("You Died");
+            //deathScreenPrefab.setActive(true);
+            mainMenu.LoadGame();
         }
-    }
-
-    IEnumerator ShowEndGameMenuAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        endGameMenu.SetActive(true);
-        Time.timeScale = 0f;
-    }
+    }    
 }
