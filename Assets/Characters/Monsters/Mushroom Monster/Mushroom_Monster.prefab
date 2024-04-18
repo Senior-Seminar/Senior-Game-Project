@@ -79,12 +79,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 1091258518, guid: 11ef43727ed6dbc4aba65cf2d12766b0, type: 3}
+  m_Sprite: {fileID: -861076952, guid: 11ef43727ed6dbc4aba65cf2d12766b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.96, y: 0.96}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -149,9 +149,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.002297759, y: -0.29090723}
+  m_Offset: {x: -0.009284973, y: -0.29090723}
   serializedVersion: 2
-  m_Radius: 0.211845
+  m_Radius: 0.17690891
 --- !u!95 &4675032315044723417
 Animator:
   serializedVersion: 5
@@ -188,7 +188,7 @@ MonoBehaviour:
   damage: 1
   knockbackForce: 5
   moveSpeed: 200
-  detectionZone: {fileID: 7695593824069273355}
+  detectionZone: {fileID: 1013369129312694555}
 --- !u!114 &2387225134952322507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,7 +214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5465574728524186705}
   - component: {fileID: 3002270283058414772}
-  - component: {fileID: 7695593824069273355}
+  - component: {fileID: 1013369129312694555}
   m_Layer: 0
   m_Name: DetectionZone
   m_TagString: Untagged
@@ -272,7 +272,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.25
---- !u!114 &7695593824069273355
+--- !u!114 &1013369129312694555
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -281,7 +281,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5693603553245455304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22f7571746c76e542af26e2912784a03, type: 3}
+  m_Script: {fileID: 11500000, guid: 50dae8c691bc0b7478a923396ad166e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tagTarget: Player

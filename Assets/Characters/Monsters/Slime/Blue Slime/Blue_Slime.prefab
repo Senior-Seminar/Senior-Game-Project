@@ -149,9 +149,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.002297759, y: -0.23312895}
+  m_Offset: {x: -0.0022027865, y: -0.21711639}
   serializedVersion: 2
-  m_Radius: 0.10073303
+  m_Radius: 0.11684058
 --- !u!95 &7095482804354658203
 Animator:
   serializedVersion: 5
@@ -188,7 +188,7 @@ MonoBehaviour:
   damage: 1
   knockbackForce: 5
   moveSpeed: 100
-  detectionZone: {fileID: 3180902910729985665}
+  detectionZone: {fileID: 4201632955645946903}
 --- !u!114 &2387225134952322507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,7 +214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2825765810175889154}
   - component: {fileID: 5928335403082157169}
-  - component: {fileID: 3180902910729985665}
+  - component: {fileID: 4201632955645946903}
   m_Layer: 0
   m_Name: DetectionZone
   m_TagString: Untagged
@@ -272,7 +272,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.25
---- !u!114 &3180902910729985665
+--- !u!114 &4201632955645946903
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -281,7 +281,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5638268105154921361}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22f7571746c76e542af26e2912784a03, type: 3}
+  m_Script: {fileID: 11500000, guid: 50dae8c691bc0b7478a923396ad166e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tagTarget: Player

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6320223811583210500}
   - component: {fileID: 4941453239361223726}
-  - component: {fileID: 3929798132779544981}
+  - component: {fileID: 4270030692794369391}
   m_Layer: 0
   m_Name: DetectionZone
   m_TagString: Untagged
@@ -68,7 +68,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
---- !u!114 &3929798132779544981
+--- !u!114 &4270030692794369391
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -77,7 +77,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3881240335376947294}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22f7571746c76e542af26e2912784a03, type: 3}
+  m_Script: {fileID: 11500000, guid: 50dae8c691bc0b7478a923396ad166e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tagTarget: Player
@@ -104,7 +104,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5939427178851819873
 Transform:
   m_ObjectHideFlags: 0
@@ -162,12 +162,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 1034085718, guid: 177f742e4f21b0b4c9728bccfd7a6147, type: 3}
+  m_Sprite: {fileID: 1626628543, guid: 177f742e4f21b0b4c9728bccfd7a6147, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.96, y: 0.96}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -271,7 +271,7 @@ MonoBehaviour:
   damage: 2
   knockbackForce: 10
   moveSpeed: 250
-  detectionZone: {fileID: 3929798132779544981}
+  detectionZone: {fileID: 4270030692794369391}
 --- !u!114 &2513131130494800249
 MonoBehaviour:
   m_ObjectHideFlags: 0
