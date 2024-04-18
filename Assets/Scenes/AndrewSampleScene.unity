@@ -4356,7 +4356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5765978906258889955, guid: f1b569ca1071c4244a23ec2504ed6c9e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5939427178851819873, guid: f1b569ca1071c4244a23ec2504ed6c9e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4590,6 +4590,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1379889178872187591, guid: 64586682a99e4ac4a8fabb04d6ca1124, type: 3}
+      propertyPath: m_Radius
+      value: 0.211845
+      objectReference: {fileID: 0}
+    - target: {fileID: 1379889178872187591, guid: 64586682a99e4ac4a8fabb04d6ca1124, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.29090723
+      objectReference: {fileID: 0}
     - target: {fileID: 3397873316716279453, guid: 64586682a99e4ac4a8fabb04d6ca1124, type: 3}
       propertyPath: m_Name
       value: Mushroom_Monster
@@ -4604,11 +4612,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5164911565504587378, guid: 64586682a99e4ac4a8fabb04d6ca1124, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.75
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5164911565504587378, guid: 64586682a99e4ac4a8fabb04d6ca1124, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.75
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5164911565504587378, guid: 64586682a99e4ac4a8fabb04d6ca1124, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4652,7 +4660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8481103903050040200, guid: 64586682a99e4ac4a8fabb04d6ca1124, type: 3}
       propertyPath: moveSpeed
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8481103903050040200, guid: 64586682a99e4ac4a8fabb04d6ca1124, type: 3}
       propertyPath: detectionZone
@@ -5133,7 +5141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3397873316716279453, guid: 02ec7bd6360657a46b8f60d607e0a927, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3422346844950325129, guid: 02ec7bd6360657a46b8f60d607e0a927, type: 3}
       propertyPath: m_LinearDrag
