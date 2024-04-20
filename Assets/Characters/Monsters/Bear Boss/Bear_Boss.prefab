@@ -285,5 +285,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableSimulation: 0
-  _health: 10
+  _health: 3
   _targetable: 1
