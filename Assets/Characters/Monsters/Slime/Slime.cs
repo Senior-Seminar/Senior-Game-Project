@@ -50,6 +50,8 @@ public class Slime2 : MonoBehaviour
 
         if (damageable != null && isPlayer)
         {
+            //play attack animatiaon
+            animator.SetTrigger("Attack");
             //*** slime attack with knockback
 
             Vector2 direction = (col.transform.position - transform.position).normalized;
@@ -68,4 +70,7 @@ public class Slime2 : MonoBehaviour
             animator.SetBool("isMoving", value);
         }
     }
+
+
+
 }
