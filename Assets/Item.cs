@@ -24,6 +24,7 @@ public abstract class Item : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isInRange = true; // Set the flag to true when the player enters the pickup radius
+            player = other.gameObject;
         }
     }
 
@@ -35,7 +36,7 @@ public abstract class Item : MonoBehaviour
         }
     }
 
-    private void Pickup()
+    protected virtual void Pickup()
     {
         Inventory playerInventory = player.GetComponent<Inventory>();
         if (playerInventory == null)
@@ -43,7 +44,7 @@ public abstract class Item : MonoBehaviour
             Debug.Log("Inventory is null");
             return;
         }
-        player.GetComponent<Inventory>().AddItem(this);
+        playerInventory.AddItem(this);
         Destroy(gameObject);
     }
 }
