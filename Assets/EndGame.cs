@@ -21,9 +21,10 @@ public class EndGame : MonoBehaviour
     {
         if (!playerAnimator.GetBool("isAlive"))
         {
+            deathScreenInstance = Instantiate(deathScreenPrefab, Vector3.zero, Quaternion.identity);
             Time.timeScale = 0;
             Debug.Log("You Died");
-            //deathScreenPrefab.setActive(true);
+            deathScreenInstance.SetActive(true);
             mainMenu.LoadGame();
         }
     }    
