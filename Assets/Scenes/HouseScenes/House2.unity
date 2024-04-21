@@ -8789,8 +8789,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6426722472179926660, guid: cdeede8fa127c724b81a06f006f9153a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 811992540}
   m_SourcePrefab: {fileID: 100100000, guid: cdeede8fa127c724b81a06f006f9153a, type: 3}
+--- !u!1 &811992539 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6426722472179926660, guid: cdeede8fa127c724b81a06f006f9153a, type: 3}
+  m_PrefabInstance: {fileID: 811992538}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &811992540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811992539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7411de0e11c6bd46b78d3ccea8f1ee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: House2
+  isNextScene: 1
+  sceneInfo: {fileID: 11400000, guid: 84b5999e8637bdb46992820220c9d7fb, type: 2}
 --- !u!4 &887776241 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7474235761491591332, guid: cbaabe91c5e66dc4c973ffaf4920282f, type: 3}
