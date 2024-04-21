@@ -35,6 +35,8 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
             {
                 animator.SetBool("isAlive", false);
                 Targetable = false;
+
+                HandleEnemyDeath();
             }
         }
         get
@@ -150,6 +152,18 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
         {
             // Player is on the right, reset rotation to face right
             animator.transform.localEulerAngles = new Vector3(0, 0, 1);
+        }
+    }
+
+    void HandleEnemyDeath()
+    {
+        if (gameObject.CompareTag("Enemy")) // Check if this is an enemy object
+        {     
+            // Call the EnemyLoot script
+            //GetComponent<Slime2>().DropItems();
+        }
+        else if(gameObject.CompareTag("CavernBoss")) {
+            GetComponent<CavernBoss>().DropKey();
         }
     }
 }
