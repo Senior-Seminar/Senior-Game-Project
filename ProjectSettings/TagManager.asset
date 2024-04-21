@@ -6,6 +6,8 @@ TagManager:
   tags:
   - CavernPuzzleTile
   - Spotlight
+  - Enemy
+  - CavernBoss
   layers:
   - Default
   - TransparentFX

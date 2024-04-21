@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine;
 public class CavernBoss : MonoBehaviour
 {
     public float damage = 2;
+    public GameObject keyItem;
     void OnCollisionEnter2D(Collision2D col)
     {
         IDamageable damageable = col.collider.GetComponent<IDamageable>();
@@ -15,5 +17,9 @@ public class CavernBoss : MonoBehaviour
         {
             damageable.OnHit(damage);
         }
+    }
+
+    public void DropKey() {
+        Instantiate(keyItem, transform.position, Quaternion.identity);
     }
 }

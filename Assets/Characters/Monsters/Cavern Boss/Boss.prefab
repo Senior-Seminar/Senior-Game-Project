@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 7639818557835919982}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: CavernBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -192,6 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
+  keyItem: {fileID: 7510054558168765408, guid: 1271c9a97646a134da0f508a08168ab6, type: 3}
 --- !u!95 &1016659863291323341
 Animator:
   serializedVersion: 5
