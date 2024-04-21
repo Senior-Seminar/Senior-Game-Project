@@ -16,8 +16,8 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
 
     public bool isAlive = true;
     private Transform playerTransform;
-    
-    
+
+
     // Health property
     public float Health
     {
@@ -108,7 +108,7 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
     {
         if (healthBar != null)
         {
-            if(Health == 0)
+            if (Health == 0)
             {
                 healthBar.fillAmount = 0;
             }
@@ -116,10 +116,10 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
             else
             {
                 // Calculate the new fill amount based on damage
-                float newFillAmount = Mathf.Clamp01(healthBar.fillAmount - ((damage * 3)/10));
+                float newFillAmount = Mathf.Clamp01(healthBar.fillAmount - ((damage * 3) / 10));
                 healthBar.fillAmount = newFillAmount;
             }
-            
+
         }
         else
         {
@@ -164,6 +164,9 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
         }
         else if(gameObject.CompareTag("CavernBoss")) {
             GetComponent<CavernBoss>().DropKey();
+        {
+            // Call the EnemyLoot script
+            GetComponent<Slime2>().DropItems();
         }
     }
 }
