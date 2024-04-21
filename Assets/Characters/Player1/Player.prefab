@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 3480863843108702234}
   - component: {fileID: 5179727959440662816}
   - component: {fileID: 7873945012873926776}
-  - component: {fileID: 6113832112668061796}
   - component: {fileID: 2611950026783145049}
+  - component: {fileID: 7492360857802974948}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8314365541570347073}
@@ -214,22 +214,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.071925044, y: 0.03258963}
   m_EdgeRadius: 0
---- !u!114 &6113832112668061796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5649724075227834282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2e1ec77a5f627f4db34bffb80330c8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 800
-  maxSpeed: 8
-  idleFriction: 100
-  swordHitBox: {fileID: 6869965042857435403}
 --- !u!114 &2611950026783145049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,9 +228,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   disableSimulation: 1
   healthBar: {fileID: 0}
-  isAlive: 1
   _health: 3
   _targetable: 1
+--- !u!114 &7492360857802974948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5649724075227834282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2e1ec77a5f627f4db34bffb80330c8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 150
+  maxSpeed: 8
+  idleFriction: 0.9
+  swordHitBox: {fileID: 0}
 --- !u!1 &6869965042857435403
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +256,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8314365541570347073}
   - component: {fileID: 6748905029791990212}
-  - component: {fileID: 5359564883638327138}
   m_Layer: 0
   m_Name: SwordHitbox
   m_TagString: Untagged
@@ -325,20 +323,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1247801, y: 0.16461062}
   m_EdgeRadius: 0
---- !u!114 &5359564883638327138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6869965042857435403}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f454e83931b88344af76d7e960b3321, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swordDamage: 1
-  knockbackForce: 5
-  swordCollider: {fileID: 6748905029791990212}
-  faceRight: {x: 0.119, y: -0.09, z: 0}
-  faceLeft: {x: -0.119, y: -0.09, z: 0}
