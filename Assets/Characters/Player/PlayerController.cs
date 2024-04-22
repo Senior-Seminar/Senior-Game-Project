@@ -23,6 +23,12 @@ public class PlayerController : MonoBehaviour
     public GameObject swordHitBox;
     Collider2D swordCollider;
 
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -37,9 +43,11 @@ public class PlayerController : MonoBehaviour
     {
         if (canMove == true && movementInput != Vector2.zero)
         {
-            //player movement with force
-            rb.AddForce(movementInput * moveSpeed * Time.deltaTime, ForceMode2D.Force);
+            //Move animation and add velocity
 
+            //Accelerate the player while run direction is pressed
+            //But don't  allow player to run faster than the max speed in any direction
+            rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movementInput * moveSpeed * Time.deltaTime), maxSpeed);
 
             //Control whether looking left or right
             if(movementInput.x > 0)
@@ -55,13 +63,11 @@ public class PlayerController : MonoBehaviour
             IsMoving = true;
         } else {
             //No movement so interpolate velocity towards 0
-            //rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, idleFriction);
+            rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, idleFriction);
+
             IsMoving = false;
         }
     }
-
-   
-
 
     public bool IsMoving
     {
@@ -81,6 +87,7 @@ public class PlayerController : MonoBehaviour
     void OnFire()
     {
         animator.SetTrigger("swordAttack");
+        audioManager.PlaySFX(audioManager.swordslash);
     }
 
     public void LockMovement()
