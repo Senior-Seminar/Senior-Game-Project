@@ -72,7 +72,7 @@ AnimatorStateTransition:
   serializedVersion: 3
   m_TransitionDuration: 0
   m_TransitionOffset: 0
-  m_ExitTime: 0
+  m_ExitTime: 0.70000005
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -150,7 +150,7 @@ AnimatorStateTransition:
   serializedVersion: 3
   m_TransitionDuration: 0
   m_TransitionOffset: 0
-  m_ExitTime: 0
+  m_ExitTime: 0.70000005
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -213,7 +213,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AC_Blue_Slime
+  m_Name: AC_Blue_Slime_Skylar
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: isMoving
@@ -267,7 +267,7 @@ AnimatorStateMachine:
     m_Position: {x: 490, y: 90, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -315484235229203040}
-    m_Position: {x: 490, y: 170, z: 0}
+    m_Position: {x: 490, y: 180, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

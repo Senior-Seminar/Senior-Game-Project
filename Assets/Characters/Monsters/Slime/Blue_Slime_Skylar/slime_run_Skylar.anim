@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: slime_run
+  m_Name: slime_run_Skylar
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -22,6 +22,8 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: -62088542, guid: 4868654b5f3584e49b5508d4245c9ad3, type: 3}
+    - time: 0.16666667
+      value: {fileID: 1854358529, guid: 4868654b5f3584e49b5508d4245c9ad3, type: 3}
     - time: 0.33333334
       value: {fileID: -1692832057, guid: 4868654b5f3584e49b5508d4245c9ad3, type: 3}
     - time: 0.5
@@ -51,6 +53,7 @@ AnimationClip:
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
     - {fileID: -62088542, guid: 4868654b5f3584e49b5508d4245c9ad3, type: 3}
+    - {fileID: 1854358529, guid: 4868654b5f3584e49b5508d4245c9ad3, type: 3}
     - {fileID: -1692832057, guid: 4868654b5f3584e49b5508d4245c9ad3, type: 3}
     - {fileID: -1480101511, guid: 4868654b5f3584e49b5508d4245c9ad3, type: 3}
     - {fileID: -169751401, guid: 4868654b5f3584e49b5508d4245c9ad3, type: 3}
