@@ -81,7 +81,6 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
         playerTransform = GameObject.FindWithTag("Player").transform;
 
         spriteRenderer = GetComponent<SpriteRenderer>();
-        healthBar = GetComponent<Image>();
     }
     public void ApplyHeal(float heal)
     {
@@ -138,7 +137,7 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
         Health -= damage * damageMultiplier;
         UpdateHealthBar(damage * damageMultiplier);
         // Apply force 
-        rb.AddForce(knockback);
+        rb.AddForce(knockback, ForceMode2D.Impulse);
     }
 
     public void OnHit(float damage)
