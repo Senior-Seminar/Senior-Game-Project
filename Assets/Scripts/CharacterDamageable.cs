@@ -109,8 +109,10 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
 
     public void SetDamageMultiplier(float multiplier, float duration)
     {
-        StartCoroutine(DamageBuffCoroutine(multiplier, duration));
-
+        if (gameObject.CompareTag("Player"))
+        {
+            StartCoroutine(DamageBuffCoroutine(multiplier, duration));
+        }
     }
 
     IEnumerator DamageBuffCoroutine(float multiplier, float duration)
