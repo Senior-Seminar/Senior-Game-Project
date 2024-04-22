@@ -175,7 +175,7 @@ MonoBehaviour:
   pickupKey: 101
   player: {fileID: 0}
   itemName: Perfect Attack Potion
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 1711497973, guid: 63ac100233ed4be418ca4f67a37abe97, type: 3}
   itemID: 16
   damageIncrease: 4
   duration: 10

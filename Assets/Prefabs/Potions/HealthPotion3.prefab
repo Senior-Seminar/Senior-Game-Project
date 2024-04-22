@@ -175,6 +175,6 @@ MonoBehaviour:
   pickupKey: 101
   player: {fileID: 0}
   itemName: Superb Health Potion
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 742311061, guid: 63ac100233ed4be418ca4f67a37abe97, type: 3}
   itemID: 11
   healAmount: 3

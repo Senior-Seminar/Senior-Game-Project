@@ -175,6 +175,6 @@ MonoBehaviour:
   pickupKey: 101
   player: {fileID: 0}
   itemName: Basic Health Potion
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: -2142533827, guid: 63ac100233ed4be418ca4f67a37abe97, type: 3}
   itemID: 9
   healAmount: 1

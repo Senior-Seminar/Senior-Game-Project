@@ -175,6 +175,6 @@ MonoBehaviour:
   pickupKey: 101
   player: {fileID: 0}
   itemName: Strong Health Potion
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: -377817458, guid: 63ac100233ed4be418ca4f67a37abe97, type: 3}
   itemID: 10
   healAmount: 2
