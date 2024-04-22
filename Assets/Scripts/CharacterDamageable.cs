@@ -17,6 +17,8 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
     public bool isAlive = true;
     private Transform playerTransform;
 
+    private bool hasShield = false;
+    public float damageMultiplier = 1.0f;
 
     // Health property
     public float Health
@@ -81,6 +83,42 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
         spriteRenderer = GetComponent<SpriteRenderer>();
         healthBar = GetComponent<Image>();
     }
+    public void ApplyHeal(float heal)
+    {
+        if (gameObject.CompareTag("Player"))
+        {
+            Health += heal;
+            if (Health > 3)
+            {
+                Health = 3;
+            }
+        }
+    }
+
+    public void ActivateShield(float duration)
+    {
+        hasShield = true;
+        StartCoroutine(DeactivateShieldAfterDelay(duration));
+    }
+
+    IEnumerator DeactivateShieldAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        hasShield = false;
+    }
+
+    public void SetDamageMultiplier(float multiplier, float duration)
+    {
+        StartCoroutine(DamageBuffCoroutine(multiplier, duration));
+
+    }
+
+    IEnumerator DamageBuffCoroutine(float multiplier, float duration)
+    {
+        damageMultiplier *= multiplier;
+        yield return new WaitForSeconds(duration);
+        damageMultiplier /= multiplier;
+    }
 
     private void Update()
     {
@@ -90,18 +128,26 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
 
     public void OnHit(float damage, Vector2 knockback)
     {
+        if (hasShield)
+        {
+            return;
+        }
         // Reduce health and update the health bar
-        Health -= damage;
-        UpdateHealthBar(damage);
+        Health -= damage * damageMultiplier;
+        UpdateHealthBar(damage * damageMultiplier);
         // Apply force 
         rb.AddForce(knockback);
     }
 
     public void OnHit(float damage)
     {
+        if (hasShield)
+        {
+            return;
+        }
         // Reduce health and update the health bar
-        Health -= damage;
-        UpdateHealthBar(damage);
+        Health -= damage * damageMultiplier;
+        UpdateHealthBar(damage * damageMultiplier);
     }
 
     void UpdateHealthBar(float damage)
@@ -157,16 +203,13 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
 
     void HandleEnemyDeath()
     {
-        if (gameObject.CompareTag("Enemy")) // Check if this is an enemy object
+        if (gameObject.CompareTag("Enemy"))
         {     
             // Call the EnemyLoot script
-            //GetComponent<Slime2>().DropItems();
+            GetComponent<Slime2>().DropItems();
         }
         else if(gameObject.CompareTag("CavernBoss")) {
             GetComponent<CavernBoss>().DropKey();
-        {
-            // Call the EnemyLoot script
-            GetComponent<Slime2>().DropItems();
         }
     }
 }

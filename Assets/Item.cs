@@ -45,6 +45,8 @@ public abstract class Item : MonoBehaviour
             return;
         }
         playerInventory.AddItem(this);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
+
+    public abstract void Use();
 }

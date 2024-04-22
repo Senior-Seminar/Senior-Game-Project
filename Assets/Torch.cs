@@ -21,4 +21,9 @@ public class Torch : Item
             Debug.Log("Player light is null!");
         }
     }
+
+    public override void Use()
+    {
+
+    }
 }
