@@ -2,23 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterDamageable : MonoBehaviour, IDamageable
 {
     public bool disableSimulation = false;
+    public Image healthBar; // Reference to the health bar image
 
     Animator animator;
     Rigidbody2D rb;
     Collider2D physicsCollider;
     SpriteRenderer spriteRenderer;
 
-    bool isAlive = true;
-
+    public bool isAlive = true;
     private Transform playerTransform;
 
+    private bool hasShield = false;
+    public float damageMultiplier = 1.0f;
 
-
-    //health property
+    // Health property
     public float Health
     {
         set
@@ -30,13 +32,14 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
 
             _health = value;
 
-            //trigger death when health is equal or below 0
+            // Trigger death when health is equal or below 0
             if (_health <= 0)
             {
                 animator.SetBool("isAlive", false);
                 Targetable = false;
-            }
 
+                HandleEnemyDeath();
+            }
         }
         get
         {
@@ -53,12 +56,11 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
         set
         {
             _targetable = value;
-            //disable movement when character 
-            //if (disableSimulation)
-            //{
-            //    rb.simulated = false;
-            //}
-            rb.simulated = false;
+            // Disable movement when character is not targetable
+            if (disableSimulation)
+            {
+                rb.simulated = false;
+            }
             physicsCollider.enabled = value;
         }
     }
@@ -68,37 +70,108 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
 
     public void Start()
     {
+
         animator = GetComponent<Animator>();
-        //this is here to make sure isAlive boolean parameters is set to true when starting
         animator.SetBool("isAlive", isAlive);
 
         rb = GetComponent<Rigidbody2D>();
         physicsCollider = GetComponent<Collider2D>();
 
-        //get player transform
+        // Get player transform
         playerTransform = GameObject.FindWithTag("Player").transform;
 
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
+    public void ApplyHeal(float heal)
+    {
+        if (gameObject.CompareTag("Player"))
+        {
+            Health += heal;
+            if (Health > 3)
+            {
+                Health = 3;
+            }
+        }
+    }
+
+    public void ActivateShield(float duration)
+    {
+        hasShield = true;
+        StartCoroutine(DeactivateShieldAfterDelay(duration));
+    }
+
+    IEnumerator DeactivateShieldAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        hasShield = false;
+    }
+
+    public void SetDamageMultiplier(float multiplier, float duration)
+    {
+        if (gameObject.CompareTag("Player"))
+        {
+            StartCoroutine(DamageBuffCoroutine(multiplier, duration));
+        }
+    }
+
+    IEnumerator DamageBuffCoroutine(float multiplier, float duration)
+    {
+        damageMultiplier *= multiplier;
+        yield return new WaitForSeconds(duration);
+        damageMultiplier /= multiplier;
+    }
 
     private void Update()
     {
-        //check if player is attack from left or right and switch animation on x axis accordingly
+        // Check if player is attacked from left or right
         CheckAttackDirection();
     }
 
-
     public void OnHit(float damage, Vector2 knockback)
     {
-        Health -= damage;
-
-        //Apply force
+        if (hasShield)
+        {
+            return;
+        }
+        // Reduce health and update the health bar
+        Health -= damage * damageMultiplier;
+        UpdateHealthBar(damage * damageMultiplier);
+        // Apply force 
         rb.AddForce(knockback, ForceMode2D.Impulse);
     }
 
     public void OnHit(float damage)
     {
-        Health -= damage;
+        if (hasShield)
+        {
+            return;
+        }
+        // Reduce health and update the health bar
+        Health -= damage * damageMultiplier;
+        UpdateHealthBar(damage * damageMultiplier);
+    }
+
+    void UpdateHealthBar(float damage)
+    {
+        if (healthBar != null)
+        {
+            if (Health == 0)
+            {
+                healthBar.fillAmount = 0;
+            }
+
+            else
+            {
+                // Calculate the new fill amount based on damage
+                float newFillAmount = Mathf.Clamp01(healthBar.fillAmount - ((damage * 3) / 10));
+                healthBar.fillAmount = newFillAmount;
+            }
+
+        }
+        else
+        {
+            Debug.LogError("Health bar Image not assigned to healthBar variable");
+        }
     }
 
     public void MakeUntargetable()
@@ -111,25 +184,33 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
         Destroy(gameObject);
     }
 
-
-
     void CheckAttackDirection()
     {
-        //determine if player direction is left or right
+        // Determine if player direction is left or right
         float direction = playerTransform.position.x < transform.position.x ? -1f : 1f;
 
         // Flip animation based on attack direction using rotation
-        //using eular angle because for some reason player is twice the size of enemy slime and don't want to change scale
         if (direction < 0f)
         {
             // Player is on the left, rotate 180 degrees to face left
             animator.transform.localEulerAngles = new Vector3(0, 180, 1);
-
         }
         else
         {
             // Player is on the right, reset rotation to face right
             animator.transform.localEulerAngles = new Vector3(0, 0, 1);
+        }
+    }
+
+    void HandleEnemyDeath()
+    {
+        if (gameObject.CompareTag("Enemy"))
+        {     
+            // Call the EnemyLoot script
+            GetComponent<Slime2>().DropItems();
+        }
+        else if(gameObject.CompareTag("CavernBoss")) {
+            GetComponent<CavernBoss>().DropKey();
         }
     }
 }
