@@ -6,6 +6,75 @@ using UnityEngine;
 public class Slime2 : MonoBehaviour
 {
 
+    public float smallDropChance;
+    public float mediumDropChance;
+    public float largeDropChance;
+
+    public GameObject smallHealthP;
+    public GameObject smallAttackP;
+    public GameObject smallShieldP;
+    public GameObject smallSpeedP;
+
+    public GameObject mediumHealthP;
+    public GameObject mediumAttackP;
+    public GameObject mediumShieldP;
+    public GameObject mediumSpeedP;
+
+    public GameObject largeHealthP;
+    public GameObject largeAttackP;
+    public GameObject largeShieldP;
+    public GameObject largeSpeedP;
+
+    public void DropItems()
+    {
+        float dropChance = Random.value;
+        if (dropChance <= largeDropChance)
+        {
+            DropLargeItem();
+        }
+        else if (dropChance <= mediumDropChance)
+        {
+            DropMediumItem();
+        }
+        else if (dropChance <= smallDropChance)
+        {
+            DropSmallItem();
+        }
+    }
+
+    void DropSmallItem()
+    {
+        int potionIndex = Random.Range(0, 4);
+        GameObject[] smallPotions = { smallHealthP, smallAttackP, smallShieldP, smallSpeedP };
+        GameObject potionDrop = smallPotions[potionIndex];
+        if (potionDrop != null)
+        {
+            Instantiate(potionDrop, transform.position, Quaternion.identity);
+        }
+    }
+
+    void DropMediumItem()
+    {
+        int potionIndex = Random.Range(0, 4);
+        GameObject[] mediumPotions = { mediumHealthP, mediumAttackP, mediumShieldP, mediumSpeedP };
+        GameObject potionDrop = mediumPotions[potionIndex];
+        if (potionDrop != null)
+        {
+            Instantiate(potionDrop, transform.position, Quaternion.identity);
+        }
+    }
+
+    void DropLargeItem()
+    {
+        int potionIndex = Random.Range(0, 4);
+        GameObject[] largePotions = { largeHealthP, largeAttackP, largeShieldP, largeSpeedP };
+        GameObject potionDrop = largePotions[potionIndex];
+        if (potionDrop != null)
+        {
+            Instantiate(potionDrop, transform.position, Quaternion.identity);
+        }
+    }
+
     public float damage = 1;
     public float knockbackForce = 100f;
     public float moveSpeed = 100f;
@@ -31,7 +100,7 @@ public class Slime2 : MonoBehaviour
 
             //move towards detected obj
             rb.AddForce(direction * moveSpeed * Time.deltaTime);
-            
+
             //rb.velocity = direction * moveSpeed *Time.deltaTime;
             IsMoving = true;
         }
@@ -52,6 +121,7 @@ public class Slime2 : MonoBehaviour
         {
             //play attack animatiaon
             animator.SetTrigger("Attack");
+
             //*** slime attack with knockback
 
             Vector2 direction = (col.transform.position - transform.position).normalized;
@@ -70,7 +140,4 @@ public class Slime2 : MonoBehaviour
             animator.SetBool("isMoving", value);
         }
     }
-
-
-
 }
