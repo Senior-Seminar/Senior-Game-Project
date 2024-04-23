@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class InventorySlot : MonoBehaviour, IPointerClickHandler
+public class InventorySlot : MonoBehaviour
 {
     public Image icon;
     public Item item; // Reference to the item in this slot
@@ -23,16 +23,15 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
         icon.enabled = false;
     }
 
-    // Handle right-click to add item to inventory
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnUseItem()
     {
-        if (eventData.button == PointerEventData.InputButton.Right)
+        Debug.Log("Tried to use " + item.name);
+        if (item != null)
         {
-            if (item != null)
-            {
-                Inventory.instance.AddItem(item);
-                RemoveItem();
-            }
+            Debug.Log("Used " + item.name);
+            item.Use();
+            Inventory.instance.RemoveItem(item);
+            RemoveItem();
         }
     }
 }

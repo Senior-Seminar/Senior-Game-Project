@@ -9,15 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 8e1afa5995d026e48adc652b14ef8407
   - enabled: 1
-    path: Assets/Scenes/AndrewSampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/AreaOne.unity
-    guid: d806970f4b2f020409eb96ca59550cbf
-  - enabled: 1
-    path: Assets/Scenes/AreaOne(2).unity
-    guid: c086402c5515bf6489311b2cbf01dd10
-  - enabled: 1
     path: Assets/Scenes/HouseScenes/House1.unity
     guid: 906d5b7a51f93294d8e3630114e1ae10
   - enabled: 1
@@ -31,5 +22,11 @@ EditorBuildSettings:
     guid: 3e4128141fdb5d14f8a4ffac345fbb34
   - enabled: 1
     path: Assets/Scenes/Cavern.unity
-    guid: 6ca69e721c8f8f848acd5d5235a581c4
+    guid: 38d15db6eb2e5e94081a416e3ae3ae9a
+  - enabled: 1
+    path: Assets/Scenes/Stuff Part 2.unity
+    guid: 23410511012f5924dbd2e94d014438e8
+  - enabled: 1
+    path: Assets/Scenes/Andrew's AreaOne.unity
+    guid: 06e9cae6b522f714ea6617160049cc2f
   m_configObjects: {}

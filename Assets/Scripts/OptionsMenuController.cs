@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
+using System.IO;
 
 public class OptionsMenuController : MonoBehaviour
 {
@@ -68,5 +70,33 @@ public class OptionsMenuController : MonoBehaviour
     public void LoadMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void SaveGame()
+    {
+        Debug.Log("Saving Game...");
+        string currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+        //int coins = CoinCounter.instance.currentCoins;
+        float[] position = new float[3];
+        position[0] = GameObject.FindGameObjectWithTag("Player").transform.position.x;
+        position[1] = GameObject.FindGameObjectWithTag("Player").transform.position.y;
+        position[2] = GameObject.FindGameObjectWithTag("Player").transform.position.z;
+        List<Item> items = new List<Item>();
+        GameData gameData;
+        Inventory inventory = Inventory.instance;
+        if(inventory != null && inventory.items != null)
+        {
+            items = inventory.items;
+            gameData = new GameData(currentScene, 0, position, items);
+        }
+        
+        gameData = new GameData(currentScene, 0, position);
+        
+
+        string jsonData =JsonUtility.ToJson(gameData);
+
+        string filePath = "C:/Users/mdami/OneDrive/Desktop/Senior-Game-Project/GameData/saveData.json";
+        File.WriteAllText(filePath, jsonData);
+        Debug.Log("Saved game to : " + filePath + jsonData);
     }
 }

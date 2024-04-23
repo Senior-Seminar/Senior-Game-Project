@@ -65,7 +65,6 @@ public class Inventory : MonoBehaviour
     // Update the inventory UI to reflect the current items
     public void UpdateInventoryUI()
     {
-        Debug.Log("Updating UI");
         // Destroy existing inventory slots
         foreach (Transform child in inventorySlotsParent.transform)
         {
@@ -77,7 +76,6 @@ public class Inventory : MonoBehaviour
         {
             GameObject slotObject = Instantiate(inventorySlotPrefab, inventorySlotsParent.transform);
             InventorySlot slot = slotObject.GetComponent<InventorySlot>();
-            Debug.Log(item.itemName);
             slot.AddItem(item);
         }
 
@@ -86,8 +84,6 @@ public class Inventory : MonoBehaviour
             GameObject slotObject = Instantiate(inventorySlotPrefab, inventorySlotsParent.transform);
             InventorySlot slot = slotObject.GetComponent<InventorySlot>();
         }
-
-        Debug.Log("Updated");
     }
 
 

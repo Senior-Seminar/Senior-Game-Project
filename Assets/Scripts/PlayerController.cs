@@ -23,7 +23,12 @@ public class PlayerController : MonoBehaviour
     public GameObject swordHitBox;
     Collider2D swordCollider;
 
+    AudioManager audioManager;
 
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -64,6 +69,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void ApplySpeedBoost(float multiplier, float duration)
+    {
+        StartCoroutine(SpeedBoostCoroutine(multiplier, duration));
+    }
+
+    IEnumerator SpeedBoostCoroutine(float multiplier, float duration)
+    {
+        moveSpeed *= multiplier;
+        maxSpeed *= multiplier;
+        yield return new WaitForSeconds(duration);
+        moveSpeed /= multiplier;
+        maxSpeed /= multiplier;
+    }
+
     public bool IsMoving
     {
         set
@@ -82,6 +101,7 @@ public class PlayerController : MonoBehaviour
     void OnFire()
     {
         animator.SetTrigger("swordAttack");
+        audioManager.PlaySFX(audioManager.swordslash);
     }
 
     public void LockMovement()

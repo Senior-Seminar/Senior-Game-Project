@@ -175,7 +175,7 @@ MonoBehaviour:
   pickupKey: 101
   player: {fileID: 0}
   itemName: Superb Attack Potion
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: -490631590, guid: 63ac100233ed4be418ca4f67a37abe97, type: 3}
   itemID: 15
   damageIncrease: 3
   duration: 9

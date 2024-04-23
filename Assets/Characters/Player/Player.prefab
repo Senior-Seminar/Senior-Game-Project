@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 3480863843108702234}
   - component: {fileID: 5179727959440662816}
   - component: {fileID: 7873945012873926776}
-  - component: {fileID: 6113832112668061796}
   - component: {fileID: 2611950026783145049}
+  - component: {fileID: 7205335501800308774}
+  - component: {fileID: 2703714648773669661}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -33,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8314365541570347073}
@@ -155,8 +156,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 15
+  m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -165,10 +166,10 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &7873945012873926776
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -214,22 +215,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.071925044, y: 0.03258963}
   m_EdgeRadius: 0
---- !u!114 &6113832112668061796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5649724075227834282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1242dcd83da9a994297d6d4be579c2a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 1
-  maxSpeed: 1
-  idleFriction: 100
-  swordHitBox: {fileID: 6869965042857435403}
 --- !u!114 &2611950026783145049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,9 +228,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableSimulation: 1
-  healthBar: {fileID: 6735070442304952899, guid: 6a72d53f0b3b8de4aa10592c9cace96a, type: 3}
-  _health: 3
+  healthBar: {fileID: 0}
+  isAlive: 1
+  damageMultiplier: 1
+  _health: 50
   _targetable: 1
+--- !u!114 &7205335501800308774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5649724075227834282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1242dcd83da9a994297d6d4be579c2a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 800
+  maxSpeed: 8
+  idleFriction: 0.9
+  swordHitBox: {fileID: 6869965042857435403}
+--- !u!114 &2703714648773669661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5649724075227834282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeaec17fd509ba1479c2ec3726549034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items: []
+  space: 16
+  inventoryUI: {fileID: 0}
+  inventorySlotsParent: {fileID: 0}
+  inventorySlotPrefab: {fileID: 0}
 --- !u!1 &6869965042857435403
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +331,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.02313266, y: 0.071821034}
+  m_Offset: {x: -0.02616813, y: 0.021952718}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -322,7 +342,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1247801, y: 0.16461062}
+  m_Size: {x: 0.12766375, y: 0.16828379}
   m_EdgeRadius: 0
 --- !u!114 &5359564883638327138
 MonoBehaviour:
@@ -337,7 +357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swordDamage: 1
-  knockbackForce: 500
+  knockbackForce: 5
   swordCollider: {fileID: 6748905029791990212}
   faceRight: {x: 0.119, y: -0.09, z: 0}
   faceLeft: {x: -0.119, y: -0.09, z: 0}

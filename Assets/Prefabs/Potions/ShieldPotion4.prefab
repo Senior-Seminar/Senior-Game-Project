@@ -175,6 +175,6 @@ MonoBehaviour:
   pickupKey: 101
   player: {fileID: 0}
   itemName: Perfect Shield Potion
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: -513591969, guid: 63ac100233ed4be418ca4f67a37abe97, type: 3}
   itemID: 8
   duration: 10
