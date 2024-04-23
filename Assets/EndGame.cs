@@ -27,5 +27,27 @@ public class EndGame : MonoBehaviour
             deathScreenInstance.SetActive(true);
             mainMenu.LoadGame();
         }
-    }    
+    }
+    public GameObject gameOverCanvas;
+
+    // This function is called when the player finds the son
+    void FoundSon()
+    {
+        // Check if the player makes contact with a GameObject named "SonPlayer"
+        GameObject sonPlayer = GameObject.Find("SonPlayer");
+
+
+
+        if (sonPlayer != null && sonPlayer.CompareTag("Player"))
+        {
+            // Display the game over canvas
+            if (gameOverCanvas != null)
+            {
+                gameOverCanvas.SetActive(true);
+            }
+            
+            // Load the main menu scene
+            SceneManager.LoadScene("mainMenu");
+        }
+    }
 }

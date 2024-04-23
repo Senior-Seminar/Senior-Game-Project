@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour {
 
    public void NewGame ()
    {
-	   SceneManager.LoadScene("AreaOne(2)");
+	   SceneManager.LoadScene("RuinsRoom1");
    }
 
    public void LoadGame()

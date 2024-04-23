@@ -265,12 +265,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 5765978906258889955}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 741743855bad3f7499e607b6e3196791, type: 3}
+  m_Script: {fileID: 11500000, guid: 2be56aa491d5dc944be6f8517f2106a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
-  knockbackForce: 10
-  moveSpeed: 250
+  smallDropChance: 0
+  mediumDropChance: 0
+  largeDropChance: 0
+  keyItem: {fileID: 0}
+  smallHealthP: {fileID: 0}
+  smallAttackP: {fileID: 0}
+  smallShieldP: {fileID: 0}
+  smallSpeedP: {fileID: 0}
+  mediumHealthP: {fileID: 0}
+  mediumAttackP: {fileID: 0}
+  mediumShieldP: {fileID: 0}
+  mediumSpeedP: {fileID: 0}
+  largeHealthP: {fileID: 0}
+  largeAttackP: {fileID: 0}
+  largeShieldP: {fileID: 0}
+  largeSpeedP: {fileID: 0}
+  damage: 1
+  knockbackForce: 100
+  moveSpeed: 500
   detectionZone: {fileID: 525665891486017740}
 --- !u!114 &2513131130494800249
 MonoBehaviour:
@@ -285,5 +301,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableSimulation: 0
+  healthBar: {fileID: 0}
+  isAlive: 1
+  maxHP: 3
+  damageMultiplier: 1
   _health: 10
   _targetable: 1

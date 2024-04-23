@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1487393499397429915}
   - component: {fileID: 74029655672294665}
   - component: {fileID: 6298180649552470619}
-  - component: {fileID: 3659662407372508454}
+  - component: {fileID: 6528095738493372847}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -177,7 +177,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.37348944, y: 0.3361241}
   m_EdgeRadius: 0
---- !u!114 &3659662407372508454
+--- !u!114 &6528095738493372847
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,10 +186,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7076181081786172389}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b5aedb2e2e27ae48a439d7a85c76f47, type: 3}
+  m_Script: {fileID: 11500000, guid: 027dc903ab910974999ffc69ee85bd80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogBox: {fileID: 0}
-  dialogText: {fileID: 0}
-  dialog: 
-  dialogActive: 0

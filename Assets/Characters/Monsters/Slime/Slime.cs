@@ -9,7 +9,7 @@ public class Slime2 : MonoBehaviour
     public float smallDropChance;
     public float mediumDropChance;
     public float largeDropChance;
-
+    public GameObject keyItem;
     public GameObject smallHealthP;
     public GameObject smallAttackP;
     public GameObject smallShieldP;
@@ -25,8 +25,12 @@ public class Slime2 : MonoBehaviour
     public GameObject largeShieldP;
     public GameObject largeSpeedP;
 
-    public void DropItems()
+        public void DropItems()
     {
+        if (gameObject.CompareTag("CavernBoss"))
+        {
+            Instantiate(keyItem, transform.position, Quaternion.identity);
+        }
         float dropChance = Random.value;
         if (dropChance <= largeDropChance)
         {

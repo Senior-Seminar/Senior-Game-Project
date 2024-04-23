@@ -76,7 +76,7 @@ public class OptionsMenuController : MonoBehaviour
     {
         Debug.Log("Saving Game...");
         string currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
-        int coins = CoinCounter.instance.currentCoins;
+        //int coins = CoinCounter.instance.currentCoins;
         float[] position = new float[3];
         position[0] = GameObject.FindGameObjectWithTag("Player").transform.position.x;
         position[1] = GameObject.FindGameObjectWithTag("Player").transform.position.y;
@@ -87,10 +87,10 @@ public class OptionsMenuController : MonoBehaviour
         if(inventory != null && inventory.items != null)
         {
             items = inventory.items;
-            gameData = new GameData(currentScene, coins, position, items);
+            gameData = new GameData(currentScene, 0, position, items);
         }
         
-        gameData = new GameData(currentScene, coins, position);
+        gameData = new GameData(currentScene, 0, position);
         
 
         string jsonData =JsonUtility.ToJson(gameData);

@@ -3,7 +3,21 @@ guid: 2be56aa491d5dc944be6f8517f2106a0
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - keyItem: {instanceID: 0}
+  - smallHealthP: {fileID: 3964953751999632839, guid: bf872ee4d1b61a44684e0a449f0239a1, type: 3}
+  - smallAttackP: {fileID: 3964953751999632839, guid: cafc940f53d689f4f9b00ae73c4bbffd, type: 3}
+  - smallShieldP: {fileID: 3964953751999632839, guid: 66960fde1a7c6ed459b707d3437b83ea, type: 3}
+  - smallSpeedP: {fileID: 3964953751999632839, guid: 3ed05b2c09f6cc842b062f01a7844146, type: 3}
+  - mediumHealthP: {fileID: 3964953751999632839, guid: 68efe5a830e950e40968e3308eabee69, type: 3}
+  - mediumAttackP: {fileID: 3964953751999632839, guid: 42aa9565c11964444a6eb77961b070c0, type: 3}
+  - mediumShieldP: {fileID: 3964953751999632839, guid: 3e476ce7fd7cb794083cbc78794b0585, type: 3}
+  - mediumSpeedP: {fileID: 3964953751999632839, guid: 6e0efeedb9706b146a9db587a26adbab, type: 3}
+  - largeHealthP: {fileID: 3964953751999632839, guid: 5665175f0c7bf6747b71c1fcfb57d3be, type: 3}
+  - largeAttackP: {fileID: 3964953751999632839, guid: cd14ab0a12f96e149abf3867b3e66b8c, type: 3}
+  - largeShieldP: {fileID: 3964953751999632839, guid: a35146c4f485cb04ea59fce1f009de1b, type: 3}
+  - largeSpeedP: {fileID: 3964953751999632839, guid: 371bc979c32416d41b3cc1006b78d03e, type: 3}
+  - detectionZone: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

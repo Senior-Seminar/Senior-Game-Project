@@ -17,6 +17,7 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
     public bool isAlive = true;
     private Transform playerTransform;
 
+    public float maxHP = 3f;
     private bool hasShield = false;
     public float damageMultiplier = 1.0f;
 
@@ -70,7 +71,7 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
 
     public void Start()
     {
-
+        maxHP = Health;
         animator = GetComponent<Animator>();
         animator.SetBool("isAlive", isAlive);
 
@@ -82,6 +83,7 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
 
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
+
     public void ApplyHeal(float heal)
     {
         if (gameObject.CompareTag("Player"))
@@ -159,18 +161,17 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
             {
                 healthBar.fillAmount = 0;
             }
-
             else
             {
-                // Calculate the new fill amount based on damage
-                float newFillAmount = Mathf.Clamp01(healthBar.fillAmount - ((damage * 3) / 10));
-                healthBar.fillAmount = newFillAmount;
+                if (damage > 0)
+                {
+                    healthBar.fillAmount -= damage / maxHP;
+                }
             }
-
         }
         else
         {
-            Debug.LogError("Health bar Image not assigned to healthBar variable");
+            Debug.LogError("Health bar Image not assigned to healthBar variable.");
         }
     }
 
@@ -210,7 +211,7 @@ public class CharacterDamageable : MonoBehaviour, IDamageable
             GetComponent<Slime2>().DropItems();
         }
         else if(gameObject.CompareTag("CavernBoss")) {
-            GetComponent<CavernBoss>().DropKey();
+            GetComponent<Slime2>().DropItems();
         }
     }
 }

@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - CavernBoss
   - Audio
+  - Son
   layers:
   - Default
   - TransparentFX
